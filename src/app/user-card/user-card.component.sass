@@ -1,0 +1,84 @@
+.user-card
+  max-width: 700px
+  // width: 85% 
+  margin: 2rem auto
+  padding-bottom: 1rem
+  text-align: center
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2.5rem 5rem 0 rgba(0, 0, 0, 0.1)
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  .card-top
+    background-color: #eee
+    height: 100px
+    width: 100%
+    display: flex
+    justify-content: end
+    .delete-card
+      z-index: 2
+      width: -moz-fit-content
+      width: fit-content
+      height: -moz-fit-content
+      height: fit-content
+      margin: 20px 20px 0 0
+      padding: .35rem
+      background: red
+      text-align: center
+      font-size: 2rem
+      border-radius: 6px
+      border-width: 0
+      box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0
+      box-sizing: border-box
+      color: #fff
+      cursor: pointer
+      outline: none
+      overflow: hidden
+      text-transform: none
+      transform: translateZ(0)
+      transition: all .2s,box-shadow .08s ease-in
+      -webkit-user-select: none
+      touch-action: manipulation
+      &:disabled 
+        cursor: default
+      &:focus 
+        box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px
+
+
+
+  .image-wrapper
+    position: relative
+    top: -60px
+    background: #fff
+    border-radius: 50%
+    img
+      padding: 10px
+      border-radius: 50%
+      border: 1px solid rgba(0, 0, 0, .4)
+  .user-info
+    position: relative
+    top: -30px
+    // margin-top: 5px
+    #user_title
+      font-size: .9em
+      color: blackgrey
+    #user_value
+      font-size: 1.9em
+
+  .btn-info
+    cursor: pointer
+    margin: 0 5px
+    border: none
+    -webkit-box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.3)
+    -moz-box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.3)
+    box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.3)
+    padding: 5px
+    border-radius: 2px
+    font-size: 1.5em
+    color: #969696
+    i
+      font-size: 2rem
+
+
+.active
+  color: #3ba4c7 !important

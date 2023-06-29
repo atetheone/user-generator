@@ -1,0 +1,65 @@
+<div class="user-card">
+  <div class="card-top">
+    <button type="button" class="delete-card" (click)="deleteUser(user)">
+      <i class="bi bi-x-circle"></i>
+      <span class="visually-hidden">Delete this card</span>
+    </button>
+  </div>
+  <div class="image-wrapper">
+    <img [src]="user.picture.large" alt="" srcset="" />
+  </div>
+  <div class="user-info">
+    <p id="user_title">{{ currentTitle }}</p>
+    <p id="user_value">{{ currentValue }}</p>
+  </div>
+  <div class="icons-info" #buttonsParent>
+    <button
+      id="name"
+      class="btn-info"
+      (mouseover)="trigger($event, buttonsParent)"
+    >
+      <i class="bi bi-person-circle"></i>
+      <span class="visually-hidden">Show the name</span>
+    </button>
+    <button
+      id="mail"
+      class="btn-info"
+      (mouseover)="trigger($event, buttonsParent)"
+    >
+      <i class="bi bi-envelope"></i>
+      <span class="visually-hidden">Show the email</span>
+    </button>
+    <button
+      id="birthday"
+      class="btn-info"
+      (mouseover)="trigger($event, buttonsParent)"
+    >
+      <i class="bi bi-calendar"></i>
+      <span class="visually-hidden">Show the birthday</span>
+    </button>
+    <button
+      id="address"
+      class="btn-info"
+      (mouseover)="trigger($event, buttonsParent)"
+    >
+      <i class="bi bi-map"></i>
+      <span class="visually-hidden">Show the location</span>
+    </button>
+    <button
+      id="phone"
+      class="btn-info"
+      (mouseover)="trigger($event, buttonsParent)"
+    >
+      <i class="bi bi-telephone"></i>
+      <span class="visually-hidden">Show the phone number</span>
+    </button>
+    <button
+      id="password"
+      class="btn-info"
+      (mouseover)="trigger($event, buttonsParent)"
+    >
+      <i class="bi bi-lock"></i>
+      <span class="visually-hidden">Show the password</span>
+    </button>
+  </div>
+</div>
