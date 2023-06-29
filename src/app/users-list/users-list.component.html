@@ -1,0 +1,68 @@
+<div class="users-list">
+  <h2 class="list">List of the generated users</h2>
+  <p class="list-detail">Number of users: {{ users.length }}</p>
+  <div class="top-list">
+    <div class="input-search">
+      <input aria-label="Search for a user" type="search" class="form-control"  name="search" id="" [(ngModel)]="searchValue" placeholder="Search...">
+    </div>
+    <div class="top-list-child">
+      <p class="title-fo">Filter by gender</p>
+      <select title="filter by gender" class="form-control" name="filter" [(ngModel)]="filter">
+        <option value="" disabled selected>Filter</option>
+        <option value="all">All</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+
+    <div class="top-list-child">
+      <p class="title-fo">Sort by age</p>
+      <select
+        class="form-control"
+        title="order by age"
+        (change)="sortByAge()"
+        name="order"
+        [(ngModel)]="orderByBirthday"
+      >
+        <option value="none" selected>None</option>
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+      </select>
+    </div>
+  </div>
+  <div *ngIf="loading; else userCards" class="loading">
+    <div class="spinner-border" role="status"> 
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  <ng-template #userCards>
+    <app-user-card
+      *ngFor="let user of users"
+      (remove)="removeUser($event)"
+      [user]="user"
+    ></app-user-card>
+  </ng-template>
+
+  <div class="add-user">
+    <button
+      type="button"
+      class="btn-custom"
+      (click)="generateNewUser(usersNumber.value)"
+    >
+      Generate
+      <div class="btn-icon" *ngIf="!loadingGenerate" >
+        <i class="bi bi-plus-circle-fill"></i>
+        <span class="visually-hidden">Add icon</span>
+      </div>
+      <div class="btn-icon" *ngIf="loadingGenerate">
+        <div class="spinner-border spinner-border-sm" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </button>
+    <div class="number-field">
+      <input aria-label="Generate users" #usersNumber type="number" value="1" class="number-input" (keyup.enter)="generateNewUser(usersNumber.value)"/>
+      <span>users</span>
+    </div>
+  </div>
+</div>
